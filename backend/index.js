@@ -190,12 +190,18 @@ const docs = await loader.load();
 // 8. Set up variables for the filename, question, and index settings
 // const question = "What is employee_id 72255's department?";
 const question =
-  `Critieria to determine which employees to upskill (descending order of importance):
-  1. Skills score (A lower skills score means the individual possesses lesser skills therefore he/she needs more upskilling). Hence, we need to prioritize employees with lower skills score. You may justify by looking at the average skills score amongst all the employees in the same department. 
-  2. Satisfaction Score (A low satisfaction score will indicate their unhappiness in the company. By giving them more opportunities to upskill, we can possibly increase the satisfaction score thus decreasing the turnover rate. Therefore, focus on employees with lower satisfaction score)
-  3. Younge Age (Younger employees tend to learn and pick up skills faster)
-  4. Employee Type (Full-timers are more likely to stay in the company for a longer period of time, hence it is more worth it to upskill them. Therefore, prioritize full-timers over part-timers and contracts)
-  Give me the top 3 'Need Improvement in Performance Score' employees in Software Engineering Department to upskill based on the criterias. Give me their employee ids and your reasoning for choosing them.`;
+`Identify the top 3 employees in the Software Engineering Department who need improvement in their performance score and should be prioritized for upskilling. The selection should be based on the following criteria:
+
+1. Skills Score: Prioritize employees with a lower skills score, indicating a greater need for upskilling. Justification can be based on comparing an individual's skills score with the average skills score of all employees in the same department.
+
+2. Satisfaction Score: Focus on employees with a lower satisfaction score, as upskilling opportunities may increase their job satisfaction and reduce turnover rates.
+
+3. Age: Younger employees may have a higher capacity for learning and acquiring new skills quickly, so they should be given priority.
+
+4. Employee Type: Full-time employees are likely to stay with the company longer, making it more beneficial to invest in their upskilling. Therefore, prioritize full-time employees over part-time and contract employees.
+
+Please provide the employee IDs of the selected individuals, along with a detailed justification for their selection based on the above criteria.
+`;
 const indexName = "ppcone";
 const vectorDimension = 1536;
 // 9. Initialize Pinecone client with API key and environment
