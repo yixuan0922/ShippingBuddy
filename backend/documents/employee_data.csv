@@ -1,0 +1,151 @@
+﻿EmpID,FirstName,LastName,StartDate,Title,EmployeeType,PayZone,EmployeeClassificationType,DepartmentType,DOB,JobFunctionDescription,GenderCode,RaceDesc,MaritalDesc,Performance Score,Current Employee Rating,Survey Date,Engagement Score,Satisfaction Score,Work-Life Balance Score
+1001,Susan,Exantus,29-Aug-19,Software Engineer,Part-Time,Zone A,Part-Time,Software Engineering,21/9/57,Engineer,Female,Black,Married,Needs Improvement,3,10/10/22,2,5,5
+1002,Sandra,Martin,12-Dec-22,Software Engineer,Part-Time,Zone A,Temporary,Software Engineering,8/7/50,Foreman,Female,Asian,Widowed,Satisfactory,3,3/8/23,4,5,3
+1003,Keyla,Del Bosque,8-Mar-23,Software Engineer,Contract,Zone A,Part-Time,Software Engineering,23/11/73,Foreman,Female,White,Married,Satisfactory,3,3/1/23,2,5,2
+1004,Andrew,Szabo,29-May-20,Software Engineer,Part-Time,Zone C,Part-Time,Software Engineering,27/1/57,Coordinator,Male,Black,Single,Satisfactory,3,30/7/23,3,5,3
+1005,Luke,Patronick,16-Sep-22,Software Engineer,Full-Time,Zone B,Temporary,Software Engineering,28/7/70,Project Manager,Male,Black,Divorced,Satisfactory,3,19/6/23,2,4,5
+1006,Colby,Andreola,15-Aug-21,Software Engineer,Full-Time,Zone C,Part-Time,Software Engineering,19/2/59,Administrative,Female,White,Widowed,Satisfactory,3,3/5/23,5,2,1
+1007,Edward,Tate,25-Oct-20,Software Engineer,Part-Time,Zone A,Part-Time,Software Engineering,18/3/00,Lineman,Male,Black,Widowed,Excellent,3,18/7/23,2,1,5
+1008,Judith,Carabbio,28-Aug-19,Software Engineer,Contract,Zone B,Temporary,Software Engineering,21/12/81,Foreman,Female,Hispanic,Married,Satisfactory,3,21/6/23,5,2,2
+1009,Adell,Saada,13-Jun-19,Software Engineer,Part-Time,Zone C,Temporary,Software Engineering,1/3/87,Model Assistant,Female,Other,Single,Excellent,3,6/6/23,2,5,1
+1010,Kamari,Hunter,12-Jan-21,Software Engineer,Part-Time,Zone C,Temporary,Software Engineering,21/10/92,Supervisor,Male,Hispanic,Divorced,Excellent,3,15/9/22,2,4,2
+1011,Sarah,Malone,7-Feb-22,Software Engineer,Contract,Zone A,Temporary,Software Engineering,22/2/48,Foreman,Male,Hispanic,Married,Satisfactory,3,8/12/22,1,2,3
+1012,Skyler,Blackwell,9-Nov-20,Software Engineer,Contract,Zone A,Temporary,Software Engineering,3/10/78,Administrative,Male,White,Single,Excellent,3,13/1/23,3,5,4
+1013,Jasmin,Shah,13-May-20,Software Engineer,Part-Time,Zone B,Full-Time,Software Engineering,19/11/74,Engineer,Male,Asian,Single,Excellent,3,13/12/22,5,4,3
+1014,Kole,Quinn,31-Dec-22,Shared Services Manager,Part-Time,Zone A,Full-Time,Software Engineering,13/7/53,Clerk,Male,Other,Single,Excellent,3,28/6/23,4,4,1
+1015,Ansley,Jackson,3-Dec-18,Shared Services Manager,Contract,Zone A,Part-Time,Software Engineering,4/12/61,Vp,Female,White,Married,Excellent,3,11/7/23,1,1,3
+1016,Jayda,Reese,21-Feb-20,Senior BI Developer,Part-Time,Zone B,Part-Time,Admin Offices,8/3/56,Mechanic,Female,White,Single,Satisfactory,3,9/12/22,2,3,2
+1017,Julien,Whitehead,7-Sep-20,Senior BI Developer,Full-Time,Zone B,Full-Time,Admin Offices,5/7/47,Laborer,Female,Black,Single,Satisfactory,3,16/7/23,4,1,3
+1018,Alan,Haynes,19-Jun-20,Senior BI Developer,Part-Time,Zone A,Part-Time,Admin Offices,24/2/42,Laborer,Female,White,Married,Satisfactory,3,21/6/23,4,1,4
+1019,Kamryn,Herrera,14-Oct-22,Software Engineer,Full-Time,Zone A,Temporary,Software Engineering,28/11/78,Engineer,Male,Hispanic,Widowed,Satisfactory,3,21/6/23,1,3,5
+1020,Kelvin,Foster,20-Jun-23,Software Engineer,Contract,Zone C,Full-Time,Software Engineering,20/12/90,Supervisor,Female,Black,Widowed,Excellent,3,1/8/23,2,1,2
+1021,Joe,Fletcher,9-Nov-20,Software Engineer,Full-Time,Zone C,Full-Time,Software Engineering,25/1/89,Billing,Male,Hispanic,Single,Satisfactory,3,9/3/23,5,1,4
+1022,Frederick,Howe,19-Sep-22,Software Engineer,Part-Time,Zone A,Temporary,Software Engineering,11/6/62,Engineer,Male,Black,Divorced,Excellent,3,12/2/23,1,4,4
+1023,Nickolas,Davila,9-Nov-18,Shared Services Manager,Contract,Zone C,Part-Time,Software Engineering,5/4/92,Clerk,Male,Hispanic,Divorced,Excellent,3,17/1/23,4,4,3
+1024,Kasey,Boyer,30-Dec-18,Shared Services Manager,Contract,Zone A,Part-Time,Software Engineering,30/3/87,Coordinator,Female,Other,Divorced,Satisfactory,3,12/10/22,5,3,1
+1025,Giovanni,Jenkins,11-May-23,Senior BI Developer,Full-Time,Zone A,Temporary,Admin Offices,13/11/60,Foreman,Female,Other,Divorced,Excellent,3,24/1/23,4,1,4
+1026,Alexis,Moss,3-Nov-22,Senior BI Developer,Contract,Zone A,Part-Time,Admin Offices,7/11/50,Engineer,Female,Other,Widowed,Satisfactory,3,9/10/22,5,2,5
+1027,Joanna,Murphy,14-Jun-20,Senior BI Developer,Part-Time,Zone A,Full-Time,Admin Offices,21/12/62,Flagger,Male,Other,Single,Excellent,3,5/4/23,2,3,5
+1028,Joseph,Schmidt,15-Oct-19,Software Engineer,Full-Time,Zone C,Part-Time,Software Engineering,22/10/00,Model Assistant,Male,Asian,Single,Excellent,3,26/3/23,5,5,4
+1029,Brittany,Hurley,28-Apr-20,Software Engineer,Part-Time,Zone B,Part-Time,Software Engineering,1/6/79,Specialist,Female,Asian,Divorced,Excellent,3,7/11/22,3,5,4
+1030,Niko,Hamilton,29-Oct-19,Software Engineer,Contract,Zone C,Temporary,Software Engineering,6/7/55,Foreman,Male,Black,Single,Needs Improvement,3,3/1/23,4,4,1
+1031,Ruben,Martinez,28-Apr-21,Software Engineer,Part-Time,Zone B,Temporary,Software Engineering,29/10/72,Lineman,Male,White,Widowed,Excellent,3,27/2/23,5,3,2
+1032,Kiley,Haynes,19-Apr-22,Software Engineer,Full-Time,Zone C,Part-Time,Software Engineering,1/7/54,Laborer,Male,Asian,Widowed,Excellent,3,22/5/23,5,4,4
+1033,Blaine,Brooks,28-Mar-23,Shared Services Manager,Contract,Zone B,Full-Time,Software Engineering,28/3/97,Operator,Male,Other,Single,Excellent,3,2/7/23,3,1,3
+1034,Dennis,Livingston,6-May-19,Shared Services Manager,Full-Time,Zone C,Part-Time,Software Engineering,8/12/77,Manager,Female,Black,Single,Excellent,3,9/7/23,2,5,1
+1035,Case,Russell,13-Oct-20,Senior BI Developer,Full-Time,Zone A,Temporary,Admin Offices,16/2/79,Laborer,Female,Asian,Divorced,Satisfactory,3,19/7/23,1,5,5
+1036,Kody,Jimenez,6-Jul-21,Senior BI Developer,Part-Time,Zone A,Part-Time,Admin Offices,8/8/93,Foreman,Male,Asian,Single,Needs Improvement,3,9/8/22,5,2,1
+1037,Zoe,Colon,24-Sep-20,Software Engineer,Part-Time,Zone C,Full-Time,Software Engineering,27/7/93,Engineer,Male,Other,Widowed,Excellent,3,25/11/22,5,1,4
+1038,Courtney,Cowan,18-Jan-23,Software Engineer,Contract,Zone B,Part-Time,Software Engineering,4/5/71,Crew Leader,Male,Hispanic,Married,Satisfactory,3,10/3/23,5,1,2
+1039,Nolan,Perez,22-Aug-19,Software Engineer,Part-Time,Zone B,Part-Time,Software Engineering,17/11/82,Administrative,Female,Other,Widowed,Satisfactory,3,3/12/22,2,4,5
+1040,Katrina,Farrell,25-Jul-19,Software Engineer,Contract,Zone A,Part-Time,Software Engineering,25/4/72,Technician,Male,White,Divorced,Satisfactory,3,27/9/22,5,3,1
+1041,Camden,Kelly,11-Nov-19,Software Engineer,Full-Time,Zone A,Full-Time,Software Engineering,4/11/76,Administrative,Male,White,Single,Satisfactory,3,19/1/23,3,1,4
+1042,Milo,Hood,16-Jul-22,Software Engineer,Contract,Zone B,Temporary,Software Engineering,18/8/42,Driller,Male,Black,Widowed,Satisfactory,3,17/2/23,1,3,4
+1043,Kale,Lang,19-Dec-22,Shared Services Manager,Full-Time,Zone C,Part-Time,Software Engineering,16/12/55,Billing,Female,White,Married,Excellent,3,25/2/23,1,1,3
+1044,Shyanne,Stark,15-Sep-20,Shared Services Manager,Contract,Zone A,Temporary,Software Engineering,16/9/56,Foreman,Female,Hispanic,Divorced,Satisfactory,3,26/11/22,2,4,5
+1045,Elliott,Ashley,4-Oct-20,Senior BI Developer,Full-Time,Zone C,Temporary,Admin Offices,10/6/63,Foreman,Female,Black,Single,Needs Improvement,3,8/8/22,1,4,1
+1046,Genesis,Todd,23-Apr-22,Software Engineer,Full-Time,Zone A,Temporary,Software Engineering,17/11/62,Laborer,Male,White,Single,Excellent,3,18/2/23,3,5,4
+1047,Sincere,Jimenez,27-Nov-21,Software Engineer,Contract,Zone A,Part-Time,Software Engineering,24/11/47,Technician,Female,Hispanic,Single,Satisfactory,3,12/5/23,4,2,3
+1048,Stephen,Daugherty,29-Nov-19,Software Engineer,Part-Time,Zone A,Temporary,Software Engineering,19/7/56,Helper,Male,Asian,Widowed,Satisfactory,3,19/10/22,3,1,4
+1049,Demarion,Morrow,30-May-19,Software Engineer,Part-Time,Zone B,Part-Time,Software Engineering,26/9/54,Technician,Male,White,Married,Excellent,3,27/7/23,3,5,2
+1050,Steven,Schneider,23-Nov-20,Software Engineer,Contract,Zone B,Temporary,Software Engineering,4/7/93,Accounting,Male,Black,Widowed,Satisfactory,3,3/7/23,4,5,1
+1051,Devon,Hinton,8-Apr-22,Software Engineer,Full-Time,Zone C,Part-Time,Software Engineering,29/4/81,Operator,Male,White,Divorced,Needs Improvement,3,1/1/23,2,4,5
+1052,Jacquelyn,Johns,25-Feb-21,Shared Services Manager,Contract,Zone B,Part-Time,Software Engineering,21/6/80,Foreman,Female,Hispanic,Single,Satisfactory,3,19/11/22,1,4,4
+1053,Blaine,Keith,13-Mar-19,Shared Services Manager,Contract,Zone C,Full-Time,Software Engineering,25/7/47,Project Manager,Female,Hispanic,Divorced,Needs Improvement,3,12/10/22,2,1,4
+1054,Phillip,Salazar,12-Feb-23,Software Engineer,Part-Time,Zone A,Full-Time,Software Engineering,10/5/93,Project Manager,Male,White,Single,High Flyer,3,5/7/23,1,5,2
+1055,Chaz,Webb,8-Sep-18,Software Engineer,Contract,Zone C,Full-Time,Software Engineering,24/11/95,Laborer,Female,White,Widowed,Excellent,3,23/9/22,3,4,1
+1056,Desmond,Anderson,18-Nov-21,Software Engineer,Contract,Zone C,Temporary,Software Engineering,1/9/43,Driver,Male,Hispanic,Widowed,Excellent,3,17/1/23,4,2,2
+1057,Sophie,Decker,1-Jul-23,Software Engineer,Full-Time,Zone A,Full-Time,Software Engineering,27/10/98,Foreman,Male,Asian,Widowed,Satisfactory,3,12/3/23,3,2,5
+1058,Lena,Bryan,18-Apr-22,Software Engineer,Contract,Zone C,Temporary,Software Engineering,13/3/42,Technician,Male,Hispanic,Married,Excellent,3,6/3/23,4,2,1
+1059,Kelsie,Mccormick,29-Apr-23,Software Engineer,Part-Time,Zone C,Full-Time,Software Engineering,23/5/74,Engineer,Female,Asian,Widowed,Satisfactory,3,29/3/23,4,3,3
+1060,Frida,Livingston,10-Oct-18,Shared Services Manager,Part-Time,Zone B,Full-Time,Software Engineering,5/2/76,Project Manager,Female,Black,Single,Excellent,3,1/7/23,5,5,4
+1061,Isai,Alvarado,20-Nov-22,Shared Services Manager,Part-Time,Zone C,Part-Time,Software Engineering,21/5/93,Specialist,Female,Other,Single,Satisfactory,3,5/2/23,3,3,1
+1062,Travis,Vasquez,18-May-19,Software Engineer,Part-Time,Zone A,Part-Time,Software Engineering,3/11/69,Program Manager,Male,Hispanic,Married,Satisfactory,3,3/1/23,3,2,1
+1063,Jazlene,Maynard,22-Jun-21,Software Engineer,Full-Time,Zone B,Temporary,Software Engineering,19/4/45,Foreman,Female,Black,Single,Satisfactory,3,25/7/23,5,2,4
+1064,Wyatt,Donovan,30-Mar-22,Software Engineer,Part-Time,Zone A,Part-Time,Software Engineering,24/2/87,Technician,Male,White,Divorced,Satisfactory,3,14/12/22,5,4,4
+1065,Nathaly,Cooper,28-Aug-18,Software Engineer,Contract,Zone C,Temporary,Software Engineering,26/6/95,Engineer,Male,Other,Widowed,Needs Improvement,3,20/1/23,5,3,4
+1066,Gage,Weeks,27-Dec-21,Software Engineer,Full-Time,Zone C,Temporary,Software Engineering,23/4/81,Operator,Male,Hispanic,Single,Excellent,3,15/7/23,4,3,5
+1067,Gavin,Frye,14-Nov-20,Software Engineer,Part-Time,Zone A,Temporary,Software Engineering,7/12/48,Technician,Female,White,Married,Satisfactory,3,10/6/23,3,2,5
+1068,Amber,Ross,1-Oct-21,Software Engineer,Full-Time,Zone B,Part-Time,Software Engineering,24/12/98,Project Manager,Female,Black,Widowed,Needs Improvement,3,9/10/22,3,2,2
+1069,Wyatt,Edwards,13-Oct-18,Shared Services Manager,Full-Time,Zone B,Part-Time,Software Engineering,13/9/75,Foreman,Female,Other,Widowed,Satisfactory,3,4/2/23,3,1,2
+1070,Karla,Reed,15-Dec-18,Shared Services Manager,Full-Time,Zone C,Temporary,Software Engineering,4/11/98,Project Manager,Male,Black,Married,Excellent,3,5/3/23,3,1,2
+1071,Yadira,Mcmillan,28-Mar-19,Software Engineer,Contract,Zone A,Part-Time,Software Engineering,23/6/68,Laborer,Male,Black,Married,Excellent,3,15/5/23,1,2,2
+1072,Fernando,Mcconnell,27-Dec-18,Software Engineer,Part-Time,Zone C,Part-Time,Software Engineering,20/1/77,Operator,Female,Asian,Widowed,Satisfactory,3,18/2/23,2,2,3
+1073,Sean,Bean,11-May-19,Software Engineer,Full-Time,Zone A,Full-Time,Software Engineering,24/9/98,Foreman,Male,White,Single,Satisfactory,3,16/2/23,4,4,2
+1074,Lilianna,Mccall,19-Feb-21,Software Engineer,Full-Time,Zone A,Temporary,Software Engineering,8/7/83,Laborer,Male,Asian,Divorced,Excellent,3,10/2/23,3,4,1
+1075,Salvador,Thomas,5-Nov-22,Software Engineer,Part-Time,Zone B,Full-Time,Software Engineering,23/4/68,Engineer,Male,Asian,Married,Excellent,3,10/4/23,1,2,3
+1076,Jair,Silva,22-Mar-20,Software Engineer,Contract,Zone C,Part-Time,Software Engineering,28/1/43,Administrative,Female,White,Widowed,Satisfactory,3,11/4/23,1,3,1
+1077,Derek,Moreno,2-Feb-19,Software Engineer,Contract,Zone B,Temporary,Software Engineering,10/5/92,Foreman,Female,Black,Single,High Flyer,3,12/10/22,5,2,4
+1078,Litzy,Conner,24-Feb-20,Software Engineer,Contract,Zone C,Temporary,Software Engineering,19/3/97,Foreman,Female,Asian,Divorced,Excellent,3,28/7/23,3,3,4
+1079,Joanna,Burnett,7-Apr-21,Shared Services Manager,Part-Time,Zone B,Full-Time,Software Engineering,11/4/00,Manager,Female,Hispanic,Divorced,Satisfactory,3,8/10/22,2,2,1
+1080,Abdullah,Frederick,14-Nov-20,Shared Services Manager,Part-Time,Zone C,Full-Time,Software Engineering,4/8/88,Engineer,Male,Black,Widowed,Excellent,3,4/3/23,3,1,3
+1081,Armani,Porter,17-Jan-22,Software Engineer,Contract,Zone B,Part-Time,Software Engineering,24/8/65,Laborer,Male,Asian,Divorced,Satisfactory,3,3/3/23,1,3,3
+1082,Taylor,Sanders,2-Sep-21,Software Engineer,Part-Time,Zone B,Part-Time,Software Engineering,3/3/76,Technician,Male,Other,Married,Satisfactory,3,27/2/23,1,4,1
+1083,Iliana,Randall,30-Jul-23,Software Engineer,Part-Time,Zone A,Full-Time,Software Engineering,9/1/63,Supervisor,Female,Asian,Divorced,Needs Improvement,3,9/1/23,5,5,3
+1084,Luke,Henderson,27-Jun-23,Software Engineer,Contract,Zone C,Part-Time,Software Engineering,12/8/89,Administrator,Male,White,Single,Satisfactory,3,19/2/23,1,2,4
+1085,Madelyn,Lambert,27-Mar-22,Software Engineer,Contract,Zone B,Full-Time,Software Engineering,10/3/52,Lineman,Male,Other,Divorced,Excellent,3,9/1/23,5,5,3
+1086,Ava,Pace,12-Aug-22,Software Engineer,Contract,Zone A,Temporary,Software Engineering,30/7/73,Supervisor,Female,Black,Single,Satisfactory,3,14/3/23,1,1,5
+1087,Delaney,Bruce,8-Jul-22,Software Engineer,Part-Time,Zone A,Part-Time,Software Engineering,5/8/74,Tower Hand,Female,Other,Married,Satisfactory,3,3/5/23,1,5,2
+1088,Jair,Bullock,15-Aug-20,Software Engineer,Contract,Zone B,Part-Time,Software Engineering,8/4/91,Foreman,Female,White,Widowed,Excellent,3,20/4/23,4,3,1
+1089,Kayla,Farrell,27-May-23,Software Engineer,Full-Time,Zone A,Temporary,Software Engineering,29/4/53,Groundman,Female,Black,Married,Satisfactory,3,19/4/23,3,1,5
+1090,Taylor,Gamble,2-Jan-23,Shared Services Manager,Part-Time,Zone C,Full-Time,Software Engineering,28/8/65,Technician,Female,Black,Divorced,Excellent,3,16/5/23,4,3,4
+1091,Carl,Desimone,16-Nov-18,Production Technician I,Contract,Zone B,Temporary,Production       ,26/8/86,Supervisor,Male,Asian,Single,Excellent,3,22/4/23,2,4,3
+1092,Sophia,Theamstern,12-Jul-22,Production Technician I,Part-Time,Zone C,Full-Time,Production       ,27/1/70,Clerk,Female,Hispanic,Divorced,Satisfactory,3,8/3/23,1,4,1
+1093,Kara,Harrison,16-Dec-22,Production Technician I,Contract,Zone B,Part-Time,Production       ,26/4/79,Engineer,Female,Asian,Widowed,Excellent,3,5/3/23,3,1,4
+1094,Ming,Huynh,8-May-23,Production Technician II,Part-Time,Zone A,Full-Time,Production       ,18/3/94,Foreman,Female,Other,Single,Satisfactory,3,22/1/23,5,4,5
+1095,Karen,Mancuso,7-Apr-23,Production Technician II,Full-Time,Zone A,Temporary,Production       ,28/11/41,Engineer,Female,Hispanic,Divorced,Excellent,3,17/3/23,1,2,1
+1096,Linda,Anderson,15-Feb-22,Production Technician I,Part-Time,Zone C,Part-Time,Production       ,11/1/73,Mechanic,Female,Asian,Married,Satisfactory,3,17/12/22,1,3,2
+1097,Nilson,Fernandes,17-Jul-23,Production Technician I,Contract,Zone B,Part-Time,Production       ,2/8/99,Technician,Male,Hispanic,Divorced,Excellent,3,31/10/22,1,2,5
+1098,Alain,Robinson,3-May-19,Production Technician I,Part-Time,Zone A,Temporary,Production       ,10/1/93,Engineer,Male,Asian,Widowed,Needs Improvement,3,28/12/22,2,2,2
+1099,Seffi,Shields,25-Mar-22,Production Technician I,Part-Time,Zone A,Part-Time,Production       ,24/12/71,Laborer,Female,Other,Single,Satisfactory,3,4/8/23,1,5,5
+1100,Horia,Ndzi,7-Apr-20,Production Technician I,Full-Time,Zone C,Temporary,Production       ,10/5/64,Laborer,Male,White,Divorced,Satisfactory,3,10/9/22,1,4,5
+1101,Evelyn,Girifalco,10-Mar-21,Production Technician I,Full-Time,Zone A,Part-Time,Production       ,19/3/44,Engineer,Female,White,Widowed,Needs Improvement,3,21/3/23,1,1,3
+1102,Ermine,Pelletier,4-Aug-19,Production Technician II,Part-Time,Zone A,Part-Time,Production       ,19/9/53,Groundman,Female,Black,Single,Needs Improvement,3,2/3/23,5,1,4
+1103,Samuel,MacLennan,11-Apr-21,Production Technician I,Full-Time,Zone C,Temporary,Production       ,2/4/57,Splicer,Male,Asian,Widowed,Needs Improvement,3,6/11/22,5,3,1
+1104,Sean,Bernstein,16-Jun-19,Production Technician I,Part-Time,Zone C,Temporary,Production       ,14/9/95,Supervisor,Male,Asian,Divorced,Needs Improvement,3,21/12/22,1,4,2
+1105,Shakira,Perry,8-Oct-20,Production Technician I,Contract,Zone A,Full-Time,Production       ,11/10/48,Technician,Female,Hispanic,Single,Needs Improvement,3,15/2/23,1,4,1
+1106,Michael J,Fitzpatrick,18-Aug-21,Production Technician II,Full-Time,Zone B,Temporary,Production       ,1/1/95,Lineman,Male,Other,Single,Satisfactory,3,31/1/23,2,3,3
+1107,Cybil,Trzeciak,16-Mar-20,Production Technician II,Contract,Zone A,Part-Time,Production       ,9/2/92,Laborer,Female,Other,Single,Excellent,3,18/10/22,4,5,1
+1108,Barry,Wilber,24-Jan-19,Production Technician I,Full-Time,Zone A,Full-Time,Production       ,18/4/69,Flagger,Male,White,Married,Excellent,3,24/7/23,4,5,3
+1109,Enola,Chivukula,11-Jun-22,Production Technician I,Full-Time,Zone C,Part-Time,Production       ,1/10/81,Laborer,Female,White,Divorced,Satisfactory,3,16/10/22,4,5,4
+1110,Joelle,Burke,2-Jul-22,Production Technician II,Full-Time,Zone B,Temporary,Production       ,5/5/87,Foreman,Female,Asian,Single,Satisfactory,3,23/2/23,1,1,4
+1111,Alexandra,Kirill,8-Sep-19,Production Technician I,Full-Time,Zone A,Part-Time,Production       ,31/5/52,Splicer,Female,White,Widowed,Excellent,3,11/5/23,4,1,1
+1112,Celeste,Johnson,10-Jul-22,Production Technician I,Full-Time,Zone A,Part-Time,Production       ,15/7/75,Project Manager,Female,White,Single,Needs Improvement,3,6/7/23,4,1,1
+1113,Nathalia,Hendrix,24-Apr-22,Production Technician I,Contract,Zone B,Part-Time,Production       ,3/9/76,Lineman,Female,Asian,Divorced,Needs Improvement,3,9/4/23,3,3,5
+1114,Justus,Bowen,31-Mar-20,Production Technician I,Full-Time,Zone C,Part-Time,Production       ,31/12/60,Laborer,Female,Hispanic,Widowed,Satisfactory,3,3/3/23,1,3,3
+1115,Marcus,Bender,23-Mar-19,Production Technician I,Contract,Zone A,Part-Time,Production       ,19/2/97,Technician,Male,Black,Widowed,Satisfactory,3,11/3/23,4,1,3
+1116,Ryker,Logan,9-Mar-19,Production Technician I,Full-Time,Zone A,Full-Time,Production       ,10/8/84,Clerk,Male,White,Divorced,High Flyer,3,16/12/22,3,4,4
+1117,Payten,Middleton,21-Feb-19,Production Technician I,Full-Time,Zone C,Temporary,Production       ,23/8/97,Technician,Male,Other,Divorced,Satisfactory,3,29/7/23,4,5,1
+1118,Harrison,Hunt,4-Oct-19,Production Technician I,Full-Time,Zone B,Temporary,Production       ,29/2/76,Project Manager,Male,Asian,Divorced,Excellent,3,22/2/23,1,5,3
+1119,Orlando,Henderson,24-Nov-19,Production Technician I,Part-Time,Zone C,Part-Time,Production       ,31/12/94,Laborer,Female,White,Single,Needs Improvement,3,16/4/23,4,4,5
+1120,Darian,Potts,17-Aug-20,Production Technician I,Part-Time,Zone B,Temporary,Production       ,20/9/68,Administration,Female,Black,Divorced,Satisfactory,3,5/6/23,3,3,4
+1121,Isabela,Collins,16-Mar-21,Production Manager,Part-Time,Zone C,Full-Time,Production       ,29/5/81,Lineman,Female,Hispanic,Widowed,Satisfactory,3,21/1/23,1,1,4
+1122,Sierra,Macias,16-Nov-21,Production Manager,Contract,Zone C,Part-Time,Production       ,13/11/75,Technician,Female,White,Married,Satisfactory,3,4/12/22,2,1,2
+1123,Giuliana,Farmer,3-May-22,Production Manager,Full-Time,Zone B,Full-Time,Production       ,6/11/65,Lineman,Female,Other,Married,Satisfactory,3,10/6/23,2,3,1
+1124,Pierce,Robbins,24-Dec-19,Production Manager,Full-Time,Zone A,Full-Time,Production       ,17/6/86,Technician,Female,Other,Married,Satisfactory,3,27/2/23,3,2,3
+1125,Lamont,Bridges,21-Oct-21,Production Technician II,Contract,Zone B,Part-Time,Production       ,5/5/91,Lineman,Male,Hispanic,Married,High Flyer,3,17/3/23,4,3,4
+1126,Gretchen,Richard,8-Sep-18,Production Technician II,Part-Time,Zone C,Temporary,Production       ,27/10/59,Engineer,Male,White,Divorced,Excellent,3,23/4/23,3,3,2
+1127,Axel,Hart,26-Feb-19,Production Technician II,Full-Time,Zone A,Full-Time,Production       ,28/3/01,Technician,Male,White,Married,Satisfactory,3,27/1/23,5,1,3
+1128,Emma,Escobar,21-Apr-23,Production Technician II,Part-Time,Zone B,Part-Time,Production       ,20/6/57,Technician,Female,Hispanic,Married,Satisfactory,3,18/2/23,4,2,4
+1129,Maximilian,Craig,19-Sep-19,Production Technician II,Full-Time,Zone B,Part-Time,Production       ,17/5/56,Tower Hand,Female,Other,Married,Needs Improvement,3,31/10/22,1,1,1
+1130,Erik,Padilla,23-Dec-20,Production Technician I,Contract,Zone A,Part-Time,Production       ,17/2/97,Intern,Female,Hispanic,Divorced,Satisfactory,3,7/5/23,1,5,4
+1131,Gilbert,Duffy,29-Mar-19,Production Technician I,Part-Time,Zone B,Part-Time,Production       ,22/3/95,Operator,Female,Black,Single,Excellent,3,11/5/23,4,4,4
+1132,Raymond,Ayers,15-May-21,Production Technician I,Contract,Zone B,Full-Time,Production       ,4/11/63,Laborer,Female,Hispanic,Widowed,Excellent,3,15/7/23,1,5,5
+1133,Vincent,Wyatt,14-Mar-22,Production Technician I,Full-Time,Zone B,Part-Time,Production       ,20/11/49,Engineer,Female,Hispanic,Married,Excellent,3,15/6/23,1,2,4
+1134,Micah,Stanley,6-Dec-21,Production Technician I,Part-Time,Zone C,Temporary,Production       ,7/9/96,Technician,Female,Asian,Single,Excellent,3,29/12/22,4,1,2
+1135,Evan,Chen,27-Oct-21,Production Technician I,Full-Time,Zone A,Temporary,Production       ,30/8/64,Principal,Male,Other,Widowed,Needs Improvement,3,23/2/23,5,4,4
+1136,Serenity,Thornton,1-Apr-23,Production Technician I,Full-Time,Zone A,Temporary,Production       ,27/3/46,Driver,Male,Other,Divorced,Satisfactory,3,9/4/23,2,5,2
+1137,Talan,Rivas,29-May-19,Production Technician I,Full-Time,Zone C,Part-Time,Production       ,28/2/54,Laborer,Male,Black,Single,Excellent,3,12/11/22,3,3,5
+1138,Calvin,Braun,12-Jul-19,Production Technician I,Full-Time,Zone B,Temporary,Production       ,2/8/83,Coordinator,Male,Black,Divorced,Excellent,3,19/10/22,4,5,1
+1139,Cale,Bender,10-Aug-18,Production Technician I,Contract,Zone A,Temporary,Production       ,11/4/53,Technician,Male,Hispanic,Married,Excellent,3,27/8/22,2,4,2
+1140,Kirsten,Vance,29-Sep-21,Production Technician I,Part-Time,Zone C,Full-Time,Production       ,11/8/88,Engineer,Female,Black,Single,Needs Improvement,3,4/5/23,5,3,2
+1141,Cade,Cox,5-Aug-21,Production Technician I,Contract,Zone A,Full-Time,Production       ,14/8/41,Locator,Female,Black,Divorced,Satisfactory,3,26/12/22,5,5,2
+1142,Ibrahim,Wolfe,2-Aug-23,Production Manager,Full-Time,Zone B,Temporary,Production       ,10/11/92,Coordinator,Female,Asian,Married,Satisfactory,3,21/6/23,4,4,4
+1143,Elianna,Schmitt,2-Sep-18,Production Manager,Contract,Zone A,Full-Time,Production       ,20/6/42,Lineman,Female,Hispanic,Widowed,Excellent,3,13/12/22,2,4,2
+1144,Colby,Wolfe,13-Oct-19,Production Manager,Part-Time,Zone B,Part-Time,Production       ,16/4/63,Project Manager,Female,Asian,Single,Excellent,3,3/11/22,5,3,2
+1145,Autumn,Barrera,24-Sep-20,Production Technician II,Contract,Zone B,Full-Time,Production       ,4/3/48,Shop,Male,Hispanic,Married,Satisfactory,3,24/10/22,3,3,4
+1146,Emmalee,Cervantes,6-Aug-23,Production Technician II,Contract,Zone C,Part-Time,Production       ,10/11/63,Groundman,Male,Hispanic,Divorced,Needs Improvement,3,21/9/22,3,2,2
+1147,Ernest,Willis,11-Jun-19,Production Technician II,Full-Time,Zone B,Full-Time,Production       ,30/9/43,Lineman,Female,Black,Single,Excellent,3,19/3/23,1,3,5
+1148,Jaxon,Anderson,14-Feb-19,Production Technician II,Part-Time,Zone A,Temporary,Production       ,22/6/43,Project Manager,Female,Black,Married,Needs Improvement,3,2/4/23,4,1,3
+1149,Precious,Caldwell,17-Mar-22,Production Technician II,Part-Time,Zone C,Temporary,Production       ,17/9/41,Locator,Female,Asian,Married,Excellent,3,3/11/22,3,2,5
+1150,Yahir,Serrano,5-Aug-20,Production Technician I,Part-Time,Zone A,Full-Time,Production       ,3/4/81,Lineman,Female,White,Single,Satisfactory,3,28/12/22,3,4,4

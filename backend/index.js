@@ -65,7 +65,8 @@ const updatePinecone = async (client, indexName, docs) => {
     console.log(`Processing document: ${doc.metadata.source}`);
     const txtPath = doc.metadata.source;
     const text = doc.pageContent;
-    console.log(text);
+    // Use this 
+    // console.log(text);
 
     // 6. Create RecursiveCharacterTextSplitter instance
     const textSplitter = new RecursiveCharacterTextSplitter({
@@ -189,7 +190,12 @@ const docs = await loader.load();
 // 8. Set up variables for the filename, question, and index settings
 // const question = "What is employee_id 72255's department?";
 const question =
-  "Recommend me an employee to upskill based on their age (lower is better), training score (higher is better), and number of KPIs (higher is better)";
+  `Critieria to determine which employees to upskill (descending order of importance):
+  1. Skills score (A lower skills score means the individual possesses lesser skills therefore he/she needs more upskilling). Hence, we need to prioritize employees with lower skills score. You may justify by looking at the average skills score amongst all the employees in the same department. 
+  2. Satisfaction Score (A low satisfaction score will indicate their unhappiness in the company. By giving them more opportunities to upskill, we can possibly increase the satisfaction score thus decreasing the turnover rate. Therefore, focus on employees with lower satisfaction score)
+  3. Younge Age (Younger employees tend to learn and pick up skills faster)
+  4. Employee Type (Full-timers are more likely to stay in the company for a longer period of time, hence it is more worth it to upskill them. Therefore, prioritize full-timers over part-timers and contracts)
+  Give me the top 3 'Need Improvement in Performance Score' employees in Software Engineering Department to upskill based on the criterias. Give me their employee ids and your reasoning for choosing them.`;
 const indexName = "ppcone";
 const vectorDimension = 1536;
 // 9. Initialize Pinecone client with API key and environment
@@ -201,9 +207,9 @@ await client.init({
 // 10. Run the main async function
 (async () => {
   // 11. Check if Pinecone index exists and create if necessary
-  await createPineconeIndex(client, indexName, vectorDimension);
+  // await createPineconeIndex(client, indexName, vectorDimension);
   // 12. Update Pinecone vector store with document embeddings
-  //   await updatePinecone(client, indexName, docs);
+  // await updatePinecone(client, indexName, docs);
   // 13. Query Pinecone vector store and GPT model for an answer
   await queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
 })();
