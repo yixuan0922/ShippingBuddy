@@ -83,7 +83,7 @@ expressApp.post("/query", async (req, res) => {
 
   let question = req.body.query;
   let ans = await ASYNC_queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
-  res.send(ans);
+  res.json({ response: ans });
 });
 
 // expressApp.post("/read", upload.single("file"), (req, res) => {
