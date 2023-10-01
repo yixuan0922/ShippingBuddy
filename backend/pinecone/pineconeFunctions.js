@@ -38,7 +38,7 @@ const createPineconeIndex = async (client, indexName, vectorDimension) => {
     await new Promise((resolve) => setTimeout(resolve, 60000));
 
     // Log successful creation
-    logres = await Pinecone.describeIndex(indexName);
+    let logres = await Pinecone.describeIndex(indexName);
     console.log(`Created with client:`, logres);
   } else {
     // 8. Log if index already exists
@@ -149,6 +149,7 @@ const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) 
 
   // 8. Log the question being asked
   console.log(`Asking question: ${question}...`);
+  let answer = "No Match Found, Not queried";
   if (queryResponse.matches.length) {
     // 9. Create an OpenAI instance and load the QAStuffChain
     const llm = new OpenAI({});
@@ -160,12 +161,16 @@ const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) 
       input_documents: [new Document({ pageContent: concatenatedPageContent })],
       question: question,
     });
+
     // 12. Log the answer
+    answer = result.text;
     console.log(`Answer: ${result.text}`);
   } else {
     // 13. Log that there are no matches, so GPT-3 will not be queried
     console.log("Since there are no matches, GPT-3 will not be queried.");
   }
+
+  return answer;
 };
 
 module.exports = {

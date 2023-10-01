@@ -1,7 +1,11 @@
 require("dotenv").config();
+// Express
+const express = require("express");
+const bodyParser = require("body-parser");
+
+// Pinecone
 const PineconeClient = require("@pinecone-database/pinecone").Pinecone;
 const pineconeFuncs = require("./pinecone/pineconeFunctions.js");
-
 // Langchain Loaders
 const CSVLoader = require("langchain/document_loaders/fs/csv").CSVLoader;
 const TextLoader = require("langchain/document_loaders/fs/text").TextLoader;
@@ -18,7 +22,9 @@ const loadDocuments = async () => {
   });
   docs = await loader.load();
 };
-loadDocuments();
+(async () => {
+  await loadDocuments();
+})();
 
 // const question = "What is employee_id 72255's department?";
 const question = `Identify the top 3 employees in the Software Engineering Department who need improvement in their performance score and should be prioritized for upskilling. The selection should be based on the following criteria:
@@ -34,30 +40,35 @@ const question = `Identify the top 3 employees in the Software Engineering Depar
 Please provide the employee IDs of the selected individuals, along with a detailed justification for their selection based on the above criteria.
 `;
 
+// Initialize Pinecone client with API key and environment
 const indexName = "ppcone";
 const vectorDimension = 1536;
-// Initialize Pinecone client with API key and environment
-var client = null;
-const initPinecone = async () => {
-  client = new PineconeClient();
-};
-initPinecone();
+var client = new PineconeClient();
 
 const ASYNC_createPineconeIndex = async (client, indexName, vectorDimension) => {
-  await pineconeFuncs.createPineconeIndex(client, indexName, vectorDimension);
+  return await pineconeFuncs.createPineconeIndex(client, indexName, vectorDimension);
 };
 const ASYNC_updatePinecone = async (client, indexName, docs) => {
-  await pineconeFuncs.updatePinecone(client, indexName, docs);
+  return await pineconeFuncs.updatePinecone(client, indexName, docs);
 };
 const ASYNC_queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) => {
-  await pineconeFuncs.queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
+  return await pineconeFuncs.queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
 };
 
-const main = async () => {
-  await loadDocuments();
+// ASYNC_createPineconeIndex(client, indexName, vectorDimension);
+//   ASYNC_updatePinecone(client, indexName, docs);
+// ASYNC_queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
 
-  ASYNC_createPineconeIndex(client, indexName, vectorDimension);
-  //   ASYNC_updatePinecone(client, indexName, docs);
-  ASYNC_queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
-};
-main();
+// Create express server
+const expressApp = express();
+const port = process.env.PORT;
+expressApp.use(bodyParser.json()); // parse application/json
+expressApp.post("/query", async (req, res) => {
+  //   console.log(req.body);
+  let question = req.body.query;
+  let ans = await ASYNC_queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
+  res.send(ans);
+});
+expressApp.listen(port, () => {
+  console.log(`Express listening on port ${port}`);
+});
