@@ -2,6 +2,7 @@ require("dotenv").config();
 // Express
 const express = require("express");
 const bodyParser = require("body-parser");
+var cors = require("cors");
 
 // Pinecone
 const PineconeClient = require("@pinecone-database/pinecone").Pinecone;
@@ -70,6 +71,7 @@ const ASYNC_queryPineconeVectorStoreAndQueryLLM = async (client, indexName, ques
 const expressApp = express();
 const port = process.env.PORT;
 expressApp.use(bodyParser.json()); // parse application/json
+expressApp.use(cors());
 
 expressApp.post("/query", async (req, res) => {
   //   console.log(req.body);
