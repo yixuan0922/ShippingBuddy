@@ -18,15 +18,6 @@
 ```
 Email: jondoe@gmail.com
 Password: 123123
-
-Email: janedou@gmail.com
-Password: 123123
-
-Email: accounting@gmail.com
-Password: 123123
-
-Email: sales@gmail.com
-Password: 123123
 ```
 
 ## Run Locally
