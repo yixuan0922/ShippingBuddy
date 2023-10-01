@@ -1,26 +1,25 @@
-import { config } from "dotenv";
-config();
-import { PineconeClient } from "@pinecone-database/pinecone";
-import {
-  createPineconeIndex,
-  updatePinecone,
-  queryPineconeVectorStoreAndQueryLLM,
-} from "./langchain/pineconeFunctions.js";
+require("dotenv").config();
+const PineconeClient = require("@pinecone-database/pinecone").Pinecone;
+const pineconeFuncs = require("./pinecone/pineconeFunctions.js");
 
 // Langchain Loaders
-import { CSVLoader } from "langchain/document_loaders/fs/csv";
-import { TextLoader } from "langchain/document_loaders/fs/text";
-import { PDFLoader } from "langchain/document_loaders/fs/pdf";
-import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
-// Set up DirectoryLoader to load documents from the ./documents directory
-const loader = new DirectoryLoader("./langchain/documents", {
-  //   ".txt": (path) => new TextLoader(path),
-  //   ".pdf": (path) => new PDFLoader(path),
-  ".csv": (path) => new CSVLoader(path),
-});
-const docs = await loader.load();
+const CSVLoader = require("langchain/document_loaders/fs/csv").CSVLoader;
+const TextLoader = require("langchain/document_loaders/fs/text").TextLoader;
+const PDFLoader = require("langchain/document_loaders/fs/pdf").PDFLoader;
+const DirectoryLoader = require("langchain/document_loaders/fs/directory").DirectoryLoader;
 
-// Set up variables for the filename, question, and index settings
+var docs = null;
+const loadDocuments = async () => {
+  // Set up DirectoryLoader to load documents from the ./documents directory
+  const loader = new DirectoryLoader("./pinecone/documents", {
+    //   ".txt": (path) => new TextLoader(path),
+    //   ".pdf": (path) => new PDFLoader(path),
+    ".csv": (path) => new CSVLoader(path),
+  });
+  docs = await loader.load();
+};
+loadDocuments();
+
 // const question = "What is employee_id 72255's department?";
 const question = `Identify the top 3 employees in the Software Engineering Department who need improvement in their performance score and should be prioritized for upskilling. The selection should be based on the following criteria:
 
@@ -38,22 +37,27 @@ Please provide the employee IDs of the selected individuals, along with a detail
 const indexName = "ppcone";
 const vectorDimension = 1536;
 // Initialize Pinecone client with API key and environment
-const client = new PineconeClient();
-await client.init({
-  apiKey: process.env.PINECONE_API_KEY,
-  environment: process.env.PINECONE_ENVIRONMENT,
-});
+var client = null;
+const initPinecone = async () => {
+  client = new PineconeClient();
+};
+initPinecone();
 
 const ASYNC_createPineconeIndex = async (client, indexName, vectorDimension) => {
-  await createPineconeIndex(client, indexName, vectorDimension);
+  await pineconeFuncs.createPineconeIndex(client, indexName, vectorDimension);
 };
 const ASYNC_updatePinecone = async (client, indexName, docs) => {
-  await updatePinecone(client, indexName, docs);
+  await pineconeFuncs.updatePinecone(client, indexName, docs);
 };
 const ASYNC_queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) => {
-  await queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
+  await pineconeFuncs.queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
 };
 
-// ASYNC_createPineconeIndex(client, indexName, vectorDimension);
-// ASYNC_updatePinecone(client, indexName, docs);
-// ASYNC_queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
+const main = async () => {
+  await loadDocuments();
+
+  ASYNC_createPineconeIndex(client, indexName, vectorDimension);
+  //   ASYNC_updatePinecone(client, indexName, docs);
+  ASYNC_queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
+};
+main();
