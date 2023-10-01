@@ -1,26 +1,13 @@
-import { config } from "dotenv";
-import { PineconeClient } from "@pinecone-database/pinecone";
-
 import { Document } from "langchain/document";
 import { PineconeStore } from "langchain/vectorstores/pinecone";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { OpenAI } from "langchain/llms/openai";
 import { loadQAStuffChain } from "langchain/chains";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-config();
 
 // console.log(process.env.OPENAI_API_KEY);
-import { CSVLoader } from "langchain/document_loaders/fs/csv";
-import { TextLoader } from "langchain/document_loaders/fs/text";
-import { PDFLoader } from "langchain/document_loaders/fs/pdf";
-import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 
-// const loader = new CSVLoader("data.csv");
-// const docs = await loader.load();
-// const csvContent = docs.map((doc) => doc.pageContent);
-// console.log(csvContent);
-
-const createPineconeIndex = async (client, indexName, vectorDimension) => {
+export const createPineconeIndex = async (client, indexName, vectorDimension) => {
   // 1. Initiate index existence check
   console.log(`Checking "${indexName}"...`);
 
@@ -51,7 +38,7 @@ const createPineconeIndex = async (client, indexName, vectorDimension) => {
   }
 };
 
-const updatePinecone = async (client, indexName, docs) => {
+export const updatePinecone = async (client, indexName, docs) => {
   console.log("Retrieving Pinecone index...");
   // 3. Retrieve Pinecone index
   const index = client.Index(indexName);
@@ -65,7 +52,6 @@ const updatePinecone = async (client, indexName, docs) => {
     console.log(`Processing document: ${doc.metadata.source}`);
     const txtPath = doc.metadata.source;
     const text = doc.pageContent;
-    // Use this 
     // console.log(text);
 
     // 6. Create RecursiveCharacterTextSplitter instance
@@ -128,7 +114,7 @@ const updatePinecone = async (client, indexName, docs) => {
     idxID += 1;
   }
 
-  console.log(batch);
+  // console.log(batch);
   console.log(batch.length);
   await index.upsert({
     upsertRequest: {
@@ -137,7 +123,7 @@ const updatePinecone = async (client, indexName, docs) => {
   });
 };
 
-const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) => {
+export const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) => {
   // 3. Start query process
   console.log("Querying Pinecone vector store...");
   // 4. Retrieve the Pinecone index
@@ -178,44 +164,3 @@ const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) 
     console.log("Since there are no matches, GPT-3 will not be queried.");
   }
 };
-
-// 7. Set up DirectoryLoader to load documents from the ./documents directory
-const loader = new DirectoryLoader("./documents", {
-  //   ".txt": (path) => new TextLoader(path),
-  //   ".pdf": (path) => new PDFLoader(path),
-  ".csv": (path) => new CSVLoader(path),
-});
-const docs = await loader.load();
-
-// 8. Set up variables for the filename, question, and index settings
-// const question = "What is employee_id 72255's department?";
-const question =
-`Identify the top 3 employees in the Software Engineering Department who need improvement in their performance score and should be prioritized for upskilling. The selection should be based on the following criteria:
-
-1. Skills Score: Prioritize employees with a lower skills score, indicating a greater need for upskilling. Justification can be based on comparing an individual's skills score with the average skills score of all employees in the same department.
-
-2. Satisfaction Score: Focus on employees with a lower satisfaction score, as upskilling opportunities may increase their job satisfaction and reduce turnover rates.
-
-3. Age: Younger employees may have a higher capacity for learning and acquiring new skills quickly, so they should be given priority.
-
-4. Employee Type: Full-time employees are likely to stay with the company longer, making it more beneficial to invest in their upskilling. Therefore, prioritize full-time employees over part-time and contract employees.
-
-Please provide the employee IDs of the selected individuals, along with a detailed justification for their selection based on the above criteria.
-`;
-const indexName = "ppcone";
-const vectorDimension = 1536;
-// 9. Initialize Pinecone client with API key and environment
-const client = new PineconeClient();
-await client.init({
-  apiKey: process.env.PINECONE_API_KEY,
-  environment: process.env.PINECONE_ENVIRONMENT,
-});
-// 10. Run the main async function
-(async () => {
-  // 11. Check if Pinecone index exists and create if necessary
-  // await createPineconeIndex(client, indexName, vectorDimension);
-  // 12. Update Pinecone vector store with document embeddings
-  // await updatePinecone(client, indexName, docs);
-  // 13. Query Pinecone vector store and GPT model for an answer
-  await queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
-})();
