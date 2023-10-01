@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App.js";
+import SearchPage from "./pages/SearchPage";
 import reportWebVitals from "./reportWebVitals.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/routes.js";
@@ -9,7 +10,7 @@ import ErrorPage from "./pages/error_page.js";
 
 const router = createBrowserRouter([
   {
-    path: "/Home",
+    path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
@@ -17,8 +18,23 @@ const router = createBrowserRouter([
         path: "/Home",
         element: <App />,
       },
+      {
+        path: "/Search",
+        element: <SearchPage />,
+      },
     ],
   },
+  // {
+  //   path: "/Search",
+  //   element: <Root />,
+  //   errorElement: <ErrorPage />,
+  //   children: [
+  //     {
+  //       path: "/Search",
+  //       element: <SearchPage />,
+  //     },
+  //   ],
+  // },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
