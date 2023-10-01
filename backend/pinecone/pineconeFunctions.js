@@ -231,7 +231,7 @@ const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) 
     });
     console.log(courseRecommendation);
 
-    answer = answer + "\n\n" + courseRecommendation.output;
+    answer = answer + "\n\n<strong>" + courseRecommendation.output + "</strong>";
 
   } else {
     // 13. Log that there are no matches, so GPT-3 will not be queried
