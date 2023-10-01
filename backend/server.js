@@ -30,7 +30,7 @@ const loadDocuments = async () => {
 };
 (async () => {
   await loadDocuments();
-  //   console.log(docs);
+  // console.log(docs);
 })();
 
 // const question = "What is employee_id 72255's department?";
@@ -63,7 +63,7 @@ const ASYNC_queryPineconeVectorStoreAndQueryLLM = async (client, indexName, ques
 };
 
 // ASYNC_createPineconeIndex(client, indexName, vectorDimension);
-//   ASYNC_updatePinecone(client, indexName, docs);
+// ASYNC_updatePinecone(client, indexName, docs);
 // ASYNC_queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
 
 // Create express server

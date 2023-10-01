@@ -152,7 +152,7 @@ const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) 
   let answer = "No Match Found, Not queried";
   if (queryResponse.matches.length) {
     // 9. Create an OpenAI instance and load the QAStuffChain
-    const llm = new OpenAI({});
+    const llm = new OpenAI({ maxTokens: -1 });
     const chain = loadQAStuffChain(llm);
     // 10. Extract and concatenate page content from matched documents
     const concatenatedPageContent = queryResponse.matches.map((match) => match.metadata.pageContent).join(" ");
