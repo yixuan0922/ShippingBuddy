@@ -79,7 +79,7 @@ export default function Root() {
                 textDecoration: "none",
               }}
             >
-              LOGO
+              ShippingBuddies
             </Typography>
 
             <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />

@@ -18,6 +18,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import EmployeeCard from "../src/components/employeeCards.js";
 import Bg from "../src/assets/homeImg.jpg";
 import employeeData from "../src/data/data.json";
+import { Link as RRlink } from "react-router-dom";
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -76,7 +77,9 @@ export default function App() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">See who to upskill</Button>
+              <RRlink to={"/search"}>
+                <Button variant="contained">See who to upskill</Button>
+              </RRlink>
             </Stack>
           </Container>
         </Box>
