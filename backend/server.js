@@ -91,6 +91,6 @@ expressApp.post("/query", async (req, res) => {
 //     return res.json({ data: records });
 //   });
 // });
-// expressApp.listen(port, () => {
-//   console.log(`Express listening on port ${port}`);
-// });
+expressApp.listen(port, () => {
+  console.log(`Express listening on port ${port}`);
+});
