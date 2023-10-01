@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import App from "./App.js";
+import reportWebVitals from "./reportWebVitals.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/routes.js";
-import ErrorPage from "./pages/error_page";
-
-
+import ErrorPage from "./pages/error_page.js";
 const router = createBrowserRouter([
   {
     path: "/",
