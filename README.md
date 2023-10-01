@@ -16,6 +16,9 @@
 ## Demo Accounts
 
 ```
+Email: jon@gmail.com
+Password: 123123
+
 Email: jondoe@gmail.com
 Password: 123123
 ```
