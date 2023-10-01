@@ -11,6 +11,12 @@ const CSVLoader = require("langchain/document_loaders/fs/csv").CSVLoader;
 const TextLoader = require("langchain/document_loaders/fs/text").TextLoader;
 const PDFLoader = require("langchain/document_loaders/fs/pdf").PDFLoader;
 const DirectoryLoader = require("langchain/document_loaders/fs/directory").DirectoryLoader;
+// Reading CSV
+const fs = require("fs");
+const parse = require("csv-parse").parse;
+const os = require("os");
+const multer = require("multer");
+const upload = multer({ dest: os.tmpdir() });
 
 var docs = null;
 const loadDocuments = async () => {
@@ -24,6 +30,7 @@ const loadDocuments = async () => {
 };
 (async () => {
   await loadDocuments();
+  //   console.log(docs);
 })();
 
 // const question = "What is employee_id 72255's department?";
@@ -63,11 +70,26 @@ const ASYNC_queryPineconeVectorStoreAndQueryLLM = async (client, indexName, ques
 const expressApp = express();
 const port = process.env.PORT;
 expressApp.use(bodyParser.json()); // parse application/json
+
 expressApp.post("/query", async (req, res) => {
   //   console.log(req.body);
   let question = req.body.query;
   let ans = await ASYNC_queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
   res.send(ans);
+});
+
+expressApp.post("/read", upload.single("file"), (req, res) => {
+  const file = req.file;
+
+  const data = fs.readFileSync(file.path);
+  parse(data, (err, records) => {
+    if (err) {
+      console.error(err);
+      return res.status(400).json({ success: false, message: "An error occurred" });
+    }
+
+    return res.json({ data: records });
+  });
 });
 expressApp.listen(port, () => {
   console.log(`Express listening on port ${port}`);
