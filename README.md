@@ -5,13 +5,13 @@
 
 ## Built With
 
-- React Native
-- [Expo](https://docs.expo.dev/)
+- React
 - Firebase
 - Langchain
 - OpenAPI
 - Pinecone
 - Express
+- MUI
 
 ## Demo Accounts
 
