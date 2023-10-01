@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/routes.js";
 import ErrorPage from "./pages/error_page.js";
+import EmployeePage from "./pages/employee_page";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        path: "/",
+        element: <App />,
+      },
+      {
         path: "/Home",
         element: <App />,
       },
@@ -22,6 +27,11 @@ const router = createBrowserRouter([
         path: "/Search",
         element: <SearchPage />,
       },
+      {
+        path: "/EmployeePage",
+        element: <EmployeePage />,
+      },
+      EmployeePage,
     ],
   },
   // {

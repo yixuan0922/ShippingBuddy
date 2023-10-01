@@ -17,7 +17,7 @@ import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import EmployeeCard from "../src/components/employeeCards.js";
 import Bg from "../src/assets/homeImg.jpg";
-
+import employeeData from "../src/data/data.json";
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -31,12 +31,14 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = employeeData.slice(1, 10);
+console.log(cards, "yo");
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function App() {
+  var counter = 1;
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
@@ -81,8 +83,17 @@ export default function App() {
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <EmployeeCard id={card} key={card} />
+            {cards.map((card, index) => (
+              <EmployeeCard
+                id={index}
+                key={index}
+                empID={card.EmpID}
+                firstName={card.firstName}
+                lastName={card.LastName}
+                type={card.EmployeeType}
+                title={card.Title}
+                employee={card}
+              />
             ))}
           </Grid>
         </Container>

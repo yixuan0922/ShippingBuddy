@@ -13,10 +13,17 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
+import { Link, Outlet } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Divider from "@mui/material/Divider";
+import PSA from "../assets/PSA.jpg";
 export default function EmployeeCard(props) {
+  console.log(props);
   return (
     <Grid item xs={12} sm={6} md={4}>
       <Card
@@ -32,19 +39,30 @@ export default function EmployeeCard(props) {
             // 16:9
             pt: "56.25%",
           }}
-          image="https://source.unsplash.com/random?wallpapers"
+          image={PSA}
         />
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography gutterBottom variant="h5" component="h2">
-            Heading {props.id}
+            {props.firstName} {props.lastName}
           </Typography>
-          <Typography>
-            This is a media card. You can use this section to describe the
-            content.
-          </Typography>
+          <List>
+            <ListItem disablePadding>
+              <ListItemText primary={props.empID} secondary={"Employee ID"} />
+            </ListItem>{" "}
+            <Divider />
+            <ListItem disablePadding>
+              <ListItemText primary={props.title} secondary={"Title"} />
+            </ListItem>
+            <Divider />
+            <ListItem disablePadding>
+              <ListItemText primary={props.type} secondary={"Employee Type"} />
+            </ListItem>
+          </List>
         </CardContent>
         <CardActions>
-          <Button size="small">View</Button>
+          <Link to={"/EmployeePage"} state={{ employee: props.employee }}>
+            <Button size="small">View</Button>
+          </Link>
           <Button size="small">Edit</Button>
         </CardActions>
       </Card>
