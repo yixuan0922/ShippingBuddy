@@ -31,12 +31,6 @@ npm install
 Run the project:
 
 ```bash
-npx expo start
-
-# OR
-
-npm run android
-npm run ios     # You need to use macOS to build the iOS project
-npm run web
-
+npm start     # run frontend
+npm run dev   # run backend
 ```
