@@ -75,6 +75,12 @@ expressApp.use(cors());
 
 expressApp.post("/query", async (req, res) => {
   //   console.log(req.body);
+  res.set({
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Credentials": true,
+  });
+
   let question = req.body.query;
   let ans = await ASYNC_queryPineconeVectorStoreAndQueryLLM(client, indexName, question);
   res.send(ans);
