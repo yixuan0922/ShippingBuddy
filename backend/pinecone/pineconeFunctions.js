@@ -12,6 +12,12 @@ const RecursiveCharacterTextSplitter = require("langchain/text_splitter").Recurs
 // import { loadQAStuffChain } from "langchain/chains";
 // import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 
+// import { SerpAPI } from "langchain/tools";
+const SerpAPI = require("langchain/tools").SerpAPI;
+// import { initializeAgentExecutorWithOptions } from "langchain/agents";
+const initializeAgentExecutorWithOptions = require("langchain/agents").initializeAgentExecutorWithOptions;
+
+
 const createPineconeIndex = async (client, indexName, vectorDimension) => {
   // 1. Initiate index existence check
   console.log(`Checking "${indexName}"...`);
@@ -128,6 +134,51 @@ const updatePinecone = async (client, indexName, docs) => {
   console.log("upsert done!");
 };
 
+//Loading SerpAPI Agent and OpenAI
+// const gg = async () => {
+//   const model = new OpenAI({
+//     temperature: 0.5,
+//   });
+  
+//   const tools = [
+//     new SerpAPI(process.env.SERPAPI_API_KEY, {
+//       hl: "en",
+//       gl: "us",
+//     }),
+//   ];
+  
+//   const executor = await initializeAgentExecutorWithOptions(tools, model, {
+//     agentType: "zero-shot-react-description",
+//   });
+//   console.log("Loaded the agent..");
+// }
+// gg();
+// const model = new OpenAI({
+//   temperature: 0.5,
+// });
+
+// const tools = [
+//   new SerpAPI(process.env.SERPAPI_API_KEY, {
+//     hl: "en",
+//     gl: "us",
+//   }),
+// ];
+
+// const executor = await initializeAgentExecutorWithOptions(tools, model, {
+//   agentType: "zero-shot-react-description",
+// });
+// console.log("Loaded the agent..");
+
+
+var model = new OpenAI({
+  temperature: 0.5,
+});
+var tools = [
+  new SerpAPI(process.env.SERPAPI_API_KEY, {
+    hl: "en",
+    gl: "us",
+  }),
+];
 const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) => {
   // 3. Start query process
   console.log("Querying Pinecone vector store...");
@@ -164,7 +215,24 @@ const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) 
 
     // 12. Log the answer
     answer = result.text;
+
     console.log(`Answer: ${result.text}`);
+
+
+    
+    const executor = await initializeAgentExecutorWithOptions(tools, model, {
+      agentType: "zero-shot-react-description",
+    });
+    console.log("Loaded the agent..");
+    
+  
+    const courseRecommendation = await executor.call({
+      input: `Recommend me 3 specific courses with course name from https://www.myskillsfuture.gov.sg/content/portal/en/index.html for these employees based on their job departments.`,
+    });
+    console.log(courseRecommendation);
+
+    answer = answer + "\n\n" + courseRecommendation.output;
+
   } else {
     // 13. Log that there are no matches, so GPT-3 will not be queried
     console.log("Since there are no matches, GPT-3 will not be queried.");
