@@ -1,44 +1,52 @@
-import { Document } from "langchain/document";
-import { PineconeStore } from "langchain/vectorstores/pinecone";
-import { OpenAIEmbeddings } from "langchain/embeddings/openai";
-import { OpenAI } from "langchain/llms/openai";
-import { loadQAStuffChain } from "langchain/chains";
-import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
+const Document = require("langchain/document").Document;
+const Pinecone = require("@pinecone-database/pinecone").Pinecone;
+const OpenAIEmbeddings = require("langchain/embeddings/openai").OpenAIEmbeddings;
+const OpenAI = require("langchain/llms/openai").OpenAI;
+const loadQAStuffChain = require("langchain/chains").loadQAStuffChain;
+const RecursiveCharacterTextSplitter = require("langchain/text_splitter").RecursiveCharacterTextSplitter;
 
-// console.log(process.env.OPENAI_API_KEY);
+// import { Document } from "langchain/document";
+// import { PineconeStore } from "langchain/vectorstores/pinecone";
+// import { OpenAIEmbeddings } from "langchain/embeddings/openai";
+// import { OpenAI } from "langchain/llms/openai";
+// import { loadQAStuffChain } from "langchain/chains";
+// import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 
-export const createPineconeIndex = async (client, indexName, vectorDimension) => {
+const createPineconeIndex = async (client, indexName, vectorDimension) => {
   // 1. Initiate index existence check
   console.log(`Checking "${indexName}"...`);
+  // console.log(client);
 
   // 2. Get list of existing indexes
   const existingIndexes = await client.listIndexes();
+  // console.log(existingIndexes);
+  const exists = existingIndexes.some((item) => item.name === indexName);
 
   // 3. If index doesn't exist, create it
-  if (!existingIndexes.includes(indexName)) {
+  if (!exists) {
     // 4. Log index creation initiation
     console.log(`Creating "${indexName}"...`);
 
     // 5. Create index
-    const createClient = await client.createIndex({
-      createRequest: {
-        name: indexName,
-        dimension: vectorDimension,
-        metric: "cosine",
-      },
+    await client.createIndex({
+      name: indexName,
+      dimension: vectorDimension,
+      metric: "cosine",
     });
-    // 6. Log successful creation
-    console.log(`Created with client:`, createClient);
 
     // 7. Wait 60 seconds for index initialization
     await new Promise((resolve) => setTimeout(resolve, 60000));
+
+    // Log successful creation
+    let logres = await Pinecone.describeIndex(indexName);
+    console.log(`Created with client:`, logres);
   } else {
     // 8. Log if index already exists
     console.log(`"${indexName}" already exists.`);
   }
 };
 
-export const updatePinecone = async (client, indexName, docs) => {
+const updatePinecone = async (client, indexName, docs) => {
   console.log("Retrieving Pinecone index...");
   // 3. Retrieve Pinecone index
   const index = client.Index(indexName);
@@ -115,15 +123,12 @@ export const updatePinecone = async (client, indexName, docs) => {
   }
 
   // console.log(batch);
-  console.log(batch.length);
-  await index.upsert({
-    upsertRequest: {
-      vectors: batch,
-    },
-  });
+  console.log("batch length:", batch.length);
+  await index.upsert(batch);
+  console.log("upsert done!");
 };
 
-export const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) => {
+const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, question) => {
   // 3. Start query process
   console.log("Querying Pinecone vector store...");
   // 4. Retrieve the Pinecone index
@@ -133,12 +138,10 @@ export const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, que
 
   // 6. Query Pinecone index and return top 10 matches
   let queryResponse = await index.query({
-    queryRequest: {
-      topK: 10,
-      vector: queryEmbedding,
-      includeMetadata: true,
-      includeValues: true,
-    },
+    topK: 10,
+    vector: queryEmbedding,
+    includeMetadata: true,
+    includeValues: true,
   });
 
   // 7. Log the number of matches
@@ -146,9 +149,10 @@ export const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, que
 
   // 8. Log the question being asked
   console.log(`Asking question: ${question}...`);
+  let answer = "No Match Found, Not queried";
   if (queryResponse.matches.length) {
     // 9. Create an OpenAI instance and load the QAStuffChain
-    const llm = new OpenAI({});
+    const llm = new OpenAI({ maxTokens: -1 });
     const chain = loadQAStuffChain(llm);
     // 10. Extract and concatenate page content from matched documents
     const concatenatedPageContent = queryResponse.matches.map((match) => match.metadata.pageContent).join(" ");
@@ -157,10 +161,20 @@ export const queryPineconeVectorStoreAndQueryLLM = async (client, indexName, que
       input_documents: [new Document({ pageContent: concatenatedPageContent })],
       question: question,
     });
+
     // 12. Log the answer
+    answer = result.text;
     console.log(`Answer: ${result.text}`);
   } else {
     // 13. Log that there are no matches, so GPT-3 will not be queried
     console.log("Since there are no matches, GPT-3 will not be queried.");
   }
+
+  return answer;
+};
+
+module.exports = {
+  createPineconeIndex,
+  updatePinecone,
+  queryPineconeVectorStoreAndQueryLLM,
 };
