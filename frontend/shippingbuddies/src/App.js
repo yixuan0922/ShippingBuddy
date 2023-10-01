@@ -67,9 +67,10 @@ export default function App() {
               Employees
             </Typography>
             <Typography variant="h5" align="center" color="black" paragraph>
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
+            Wx, [1 Oct 2023 at 23:21:18]:
+To be a leading supply chain ecosystem orchestrator powered by innovation, technology and sustainable practices.
+
+To be the port operator of choice in the world’s gateway hubs, renowned for best-in-class services and successful partnerships.
             </Typography>
             <Stack
               sx={{ pt: 4 }}
